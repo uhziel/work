@@ -1,4 +1,6 @@
 #!/usr/bin/env python2
+# via http://docs.python.org/2/library/socket.html
+# via http://docs.python.org/2/howto/sockets.html
 
 import socket
 
