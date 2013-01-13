@@ -5,11 +5,7 @@
 import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-try:
-    s.connect(("localhost", 2013))
-except socket.error as msg:
-    print("cannot connect localhost:2013")
-    s.close()
-    exit(1)
+s.connect(("localhost", 2013))
 msg = s.recv(2000)
+s.close()
 print(msg)
