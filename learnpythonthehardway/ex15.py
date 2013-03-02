@@ -8,3 +8,4 @@ txt = open(filename)
 
 print "Here is your file %r" % filename
 print txt.read(),
+txt.close()
