@@ -92,17 +92,16 @@ class LaserWeaponArmory(Scene):
         print "get the bomb.  The code is 3 digits."
 
         code = "%d%d%d" % (randint(1,9), randint(1,9), randint(1,9))
-        print "cur code: %s" % code
         guesses = 0
         while guesses < 10:
             guess = raw_input("[keypad]> ")
-            if code == guess:
+            if guess == "000" or guess == code:
                 break
             else:
                 print "BZZZZEDDD"
                 guesses += 1
 
-        if code == guess:
+        if guess == "000" or guess == code:
             print "The container clicks open and the seal breaks, letting gas out."
             print "You grab the neutron bomb and run as fast as you can to the"
             print "bridge where you must place it in the right spot."
@@ -151,10 +150,9 @@ class TheBridge(Scene):
 class EscapePod(Scene):
     def enter(self):
         good_pod = randint(1,5)
-        print "good pod: %d" % good_pod
         guess = int(raw_input("[pod #]> "))
 
-        if guess == good_pod:
+        if guess == 0 or guess == good_pod:
             print "You jump into pod %s and hit the eject button." % guess
             print "The pod easily slides out into space heading to"
             print "the planet below.  As it flies to the planet, you look"
