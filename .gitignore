@@ -1,2 +1,4 @@
 ex16.txt
 *.pyc
+*.dSYM
+
